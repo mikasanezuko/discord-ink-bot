@@ -31,7 +31,7 @@ from discord.ext import commands, tasks
 class KeepAliveHandler(BaseHTTPRequestHandler):
     """HTTP request handler supporting both GET and HEAD pings for Render & UptimeRobot."""
 
-    def do_GET(self):
+    def do_HEAD(self):
         self.send_response(200)
         self.send_header("Content-type", "text/html; charset=utf-8")
         self.end_headers()
